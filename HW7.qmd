@@ -1,0 +1,127 @@
+---
+title: "Untitled"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+Problem 1: Setup.
+```{r}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(data.table) ## For the fread function
+library(lubridate)
+
+source("sepsis_monitor_functions.R")
+```
+
+Problem 2: Speed reading
+
+
+```{r,warning=FALSE,message=FALSE}
+library(tictoc)
+
+tic()
+test1=makeSepsisDataset(n=50,read_fn = "fread")
+print(paste0("-----n=50,fn=fdread"))
+toc()
+
+tic()
+test1=makeSepsisDataset(n=50,read_fn = "read_delim")
+print(paste0("-----n=50,fn=read_delim"))
+toc()
+
+tic()
+test1=makeSepsisDataset(n=100,read_fn = "fread")
+print(paste0("-----n=100,fn=fdread"))
+toc()
+
+tic()
+test1=makeSepsisDataset(n=100,read_fn = "read_delim")
+print(paste0("-----n=100,fn=read_delim"))
+toc()
+
+tic()
+test1=makeSepsisDataset(n=500,read_fn = "fread")
+print(paste0("-----n=500,fn=fdread"))
+toc()
+
+tic()
+test1=makeSepsisDataset(n=500,read_fn = "read_delim")
+print(paste0("-----n=500,fn=read_delim"))
+toc()
+```
+
+
+Problem 3: Speed reading
+
+
+
+```{r}
+library(googledrive)
+
+df <- makeSepsisDataset()
+
+# We have to write the file to disk first, then upload it
+df %>% write_csv("sepsis_data_temp.csv")
+
+# Uploading happens here
+sepsis_file <- drive_put(media = "sepsis_data_temp.csv", 
+          path = "https://drive.google.com/drive/folders/1O1Nckgmnn5vgwyGJG28hhU5IGoCDThfY",
+          name = "sepsis_data.csv")
+
+# Set the file permissions so anyone can download this file.
+sepsis_file %>% drive_share_anyone()
+```
+
+
+```{r}
+## Calling drive_deauth() prevents R from trying to authenticate via a browser
+## This is needed to make the GitHub Action work
+drive_deauth()
+file_link <- "https://drive.google.com/file/d/1UK4ikUGWwaywZ2OjW5s12XSOteH_WW0Y"
+
+## All data up until now
+new_data <- updateData(file_link)
+
+## Include only most recent data
+most_recent_data <- new_data %>%
+  group_by(PatientID) %>%
+  filter(obsTime == max(obsTime))
+```
+
+
+```{r}
+#Sys.Date()
+Sys.time()
+dfnew=df %>%subset(SepsisLabel==1)
+
+
+n=length(unique(dfnew$PatientID))
+res=data.frame()
+
+for(id in unique(dfnew$PatientID)){
+  dfsub=subset(dfnew,dfnew$PatientID==id)
+  res=rbind(res,dfsub[NROW(dfsub),])
+}
+
+print(res)
+
+
+```
+
+
+```{r}
+dfnew %>%
+  ggplot()+geom_line(aes(y=HR,x=(obsTime),color=PatientID))
+```
+
+
+```{r}
+most_recent_data
+```
