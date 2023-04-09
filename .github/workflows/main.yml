@@ -6,10 +6,14 @@ on:
   push:
     branches: main
   workflow_dispatch:
-permissions: write
+
 jobs:
-  hourly-job:
+  build-deploy:
     runs-on: ubuntu-latest
+  
+    permissions:
+        contents: write
+        
     steps:
       - name: Check out repository
         uses: actions/checkout@v3
