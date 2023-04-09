@@ -34,9 +34,7 @@ jobs:
                any::googledrive
                any::data.table
                any::tidyr
-               any::gt
                any::tictoc
-               any::plotly
                any::tidyverse
  
       - name: Checkout repository
