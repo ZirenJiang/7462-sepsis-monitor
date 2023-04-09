@@ -1,5 +1,5 @@
 name: Hourly Workflow
-
+permissions: write
 on:
   schedule:
     - cron: '0 * * * *'
