@@ -1,12 +1,12 @@
 name: Hourly Workflow
-permissions: write
+
 on:
   schedule:
     - cron: '0 * * * *'
   push:
     branches: main
   workflow_dispatch:
-
+permissions: write
 jobs:
   hourly-job:
     runs-on: ubuntu-latest
