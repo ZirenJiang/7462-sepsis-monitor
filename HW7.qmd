@@ -122,6 +122,45 @@ dfnew %>%
 ```
 
 
+## Display the most recent data
+
 ```{r}
 most_recent_data
 ```
+
+
+## Calculate the difference
+
+
+```{r}
+library(dplyr)
+library(tidyr)
+library(knitr)
+get_observation_data <- function(data, n, column_suffix) {
+  data %>%
+    group_by(PatientID) %>%
+    slice_max(order_by = obsTime, n = n) %>%
+    select(-c(ICULOS, SepsisLabel, obsTime)) %>%
+    rename_at(vars(HR, Temp, Resp),
+              list(~paste0(., "_", column_suffix)))
+}
+
+
+
+
+last_obs <- get_observation_data(new_data, 1, "last")
+penultimate_obs <- get_observation_data(new_data, 2, "penult")
+joined_data <- full_join(last_obs, penultimate_obs) %>%
+  transmute(PatientID,
+            `Temperature change` = Temp_last - Temp_penult,
+            `Heart rate change` = HR_last - HR_penult,
+            `Respiratory rate change` = Resp_last - Resp_penult)
+kable(joined_data, caption = "Patients' Recent Changes in Vital Stats")
+```
+
+
+
+
+
+
+
