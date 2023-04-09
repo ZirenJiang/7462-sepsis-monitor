@@ -1,6 +1,6 @@
 on:[workflow_dispatch]
 
-name: Update ICU Report
+name: 
 
 jobs:
   build-deploy:
