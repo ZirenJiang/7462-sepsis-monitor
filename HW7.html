@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -63,10 +63,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="HW7_files/libs/quarto-html/tippy.umd.min.js"></script>
 <script src="HW7_files/libs/quarto-html/anchor.min.js"></script>
 <link href="HW7_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="HW7_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="HW7_files/libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="HW7_files/libs/bootstrap/bootstrap.min.js"></script>
 <link href="HW7_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="HW7_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="HW7_files/libs/bootstrap/bootstrap-fde21167b4fcf25904ffbfbc004f719d.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 
 
 </head>
@@ -152,7 +152,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>29.875 sec elapsed</code></pre>
+<pre><code>14.524 sec elapsed</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>test1<span class="ot">=</span><span class="fu">makeSepsisDataset</span>(<span class="at">n=</span><span class="dv">50</span>,<span class="at">read_fn =</span> <span class="st">"read_delim"</span>)</span>
@@ -162,7 +162,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>21.441 sec elapsed</code></pre>
+<pre><code>11.613 sec elapsed</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>test1<span class="ot">=</span><span class="fu">makeSepsisDataset</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">read_fn =</span> <span class="st">"fread"</span>)</span>
@@ -172,7 +172,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>56.081 sec elapsed</code></pre>
+<pre><code>25.422 sec elapsed</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>test1<span class="ot">=</span><span class="fu">makeSepsisDataset</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">read_fn =</span> <span class="st">"read_delim"</span>)</span>
@@ -182,7 +182,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>42.798 sec elapsed</code></pre>
+<pre><code>23.081 sec elapsed</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>test1<span class="ot">=</span><span class="fu">makeSepsisDataset</span>(<span class="at">n=</span><span class="dv">500</span>,<span class="at">read_fn =</span> <span class="st">"fread"</span>)</span>
@@ -192,7 +192,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb24"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>281.532 sec elapsed</code></pre>
+<pre><code>131.802 sec elapsed</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="fu">tic</span>()</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>test1<span class="ot">=</span><span class="fu">makeSepsisDataset</span>(<span class="at">n=</span><span class="dv">500</span>,<span class="at">read_fn =</span> <span class="st">"read_delim"</span>)</span>
@@ -202,7 +202,7 @@ The following object is masked from 'package:purrr':
 </div>
 <div class="sourceCode cell-code" id="cb28"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="fu">toc</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>216.495 sec elapsed</code></pre>
+<pre><code>115.502 sec elapsed</code></pre>
 </div>
 </div>
 <p>Problem 3: Speed reading</p>
@@ -244,7 +244,7 @@ dttm (1): obsTime
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co">#Sys.Date()</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="fu">Sys.time</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>[1] "2024-11-25 17:32:03 UTC"</code></pre>
+<pre><code>[1] "2024-11-25 18:36:07 UTC"</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>dfnew<span class="ot">=</span>df <span class="sc">%&gt;%</span><span class="fu">subset</span>(SepsisLabel<span class="sc">==</span><span class="dv">1</span>)</span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -259,14 +259,15 @@ dttm (1): obsTime
 <span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 4 × 7
-# Groups:   PatientID [4]
+<pre><code># A tibble: 5 × 7
+# Groups:   PatientID [5]
   PatientID ICULOS    HR  Temp  Resp SepsisLabel obsTime            
   &lt;chr&gt;      &lt;int&gt; &lt;int&gt; &lt;dbl&gt; &lt;int&gt;       &lt;int&gt; &lt;dttm&gt;             
-1 000011        33    89  NA      17           1 2024-11-27 02:30:27
-2 004746        26    91  37.7    27           1 2024-11-26 18:26:50
-3 006504        30   127  NA      30           1 2024-11-26 23:21:38
-4 007252         9   111  NA      21           1 2024-11-26 02:31:07</code></pre>
+1 000018       132   116  38.3    24           1 2024-12-01 06:30:42
+2 002659       218    87  37.3    14           1 2024-12-04 18:50:28
+3 005714        39    81  NA      22           1 2024-11-27 07:49:22
+4 008017        23    86  NA      NA           1 2024-11-26 16:28:48
+5 008802       130    86  NA      19           1 2024-12-01 03:44:31</code></pre>
 </div>
 </div>
 <div class="cell">
@@ -1041,8 +1042,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -1153,7 +1152,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
